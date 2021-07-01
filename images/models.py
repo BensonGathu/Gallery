@@ -34,15 +34,15 @@ class Category(models.Model):
 
     
 class Image(models.Model):
-    image = models.ImageField(upload_to='images/',default="Image")
+    image = models.ImageField(upload_to='image/',default="image")
     name = models.CharField(max_length=100)
     desc = models.TextField()
     loc =  models.ForeignKey(Location,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
-    date_uploaded = models.DateTimeField(auto_now_add=True)
+    # uploaded_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.image
+        return self.image.url
 
     def save_image(self):
         self.save()
@@ -53,14 +53,14 @@ class Image(models.Model):
     @classmethod
     def get_image_by_id(cls,image_id):
         image = cls.objects.get(id=image_id)
-        return image
+        return image.url
 
     @classmethod
     def search_image(cls,category):
         images = cls.objects.filter(category=category).all()
-        return images
+        return images.url
     
     @classmethod
     def filter_by_location(cls,location):
         images = Image.objects.filter(location=location).all()
-        return images
+        return images.url
