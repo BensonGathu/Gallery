@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+{% for image in images %}
+    <img src="{{image.image.url}}" class="img-responsive" alt="Image">
+    <p>{{image.name}}</p>
+    {{image.desc}}
+    <br> 
+{%endfor%}
+{%endblock%}  

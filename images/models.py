@@ -1,5 +1,6 @@
+import images
 from django.db import models
-import datetime as dt
+import datetime 
 # Create your models here.
 class Location(models.Model):
     name = models.CharField(max_length=100)
@@ -39,7 +40,7 @@ class Image(models.Model):
     desc = models.TextField()
     loc =  models.ForeignKey(Location,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
-    # uploaded_date = models.DateTimeField(auto_now_add=True)
+    # update_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.image.url
@@ -57,10 +58,15 @@ class Image(models.Model):
 
     @classmethod
     def search_image(cls,category):
-        images = cls.objects.filter(category=category).all()
-        return images.url
+        images = cls.objects.filter(category__name__icontains=category).all()
+        return images
     
     @classmethod
     def filter_by_location(cls,location):
         images = Image.objects.filter(location=location).all()
         return images.url
+
+    @classmethod
+    def all_images(cls):
+        images = cls.objects.all()
+        return images
