@@ -22,7 +22,7 @@ def search(request):
 
 def image(request,image_id):
     try:
-        image = Image.objects.get(id=image_id)
+        image = Image.get_image_by_id(image_id)
 
     except ObjectDoesNotExist:
         raise Http404()
