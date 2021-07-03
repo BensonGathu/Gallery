@@ -54,7 +54,7 @@ class Image(models.Model):
     @classmethod
     def get_image_by_id(cls,image_id):
         image = cls.objects.get(id=image_id)
-        return image.url
+        return image
 
     @classmethod
     def search_image(cls,category):
