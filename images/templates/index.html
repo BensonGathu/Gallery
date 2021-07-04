@@ -2,11 +2,21 @@
 
 
 {% block content %}
+<div class="container">
 {% for image in images %}
-    <img src="{{image.image.url}}" class="img-responsive" alt="Image">
-    <p>{{image.name}}</p>
-    {{image.desc}}
-    <hr>
-    <br> 
+<div class="row">
+    <div class="col-xs-18 col-sm-6 col-md-3">
+        ​<div class="thumbnail">
+            <img src="{{image.image.url}}" class="img-fluid img-thumbnail" alt="..." style="width:500px;">
+        
+            <p><b>{{image.name}}</b></p>
+            <!-- {{image.desc}} -->
+             
+    </div>
+    
+</div>
 {%endfor%}
+</div>
+</div>
+
 {%endblock%}  
