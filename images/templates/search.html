@@ -15,14 +15,23 @@
 
   {% if images %}
     {% for image in images %}
-      <div class="col-sm-6 col-md-3">
-            <img src="{{image.image.url}}" class="img-responsive" alt="Image">
-            <p>{{image.name}}</p>
-            {{image.desc}}
-    <br> 
+    <div class="row">
+      <div class="col-xs-18 col-sm-6 col-md-3">
+          ​<div class="thumbnail">
+              <img src="{{image.image.url}}" class="img-fluid img-thumbnail" alt="..." style="width:500px;">
+          
+              <p><b>{{image.name}}</b></p>
+              <!-- {{image.desc}} -->
+               
       </div>
+      
+  </div>
+  
     {% endfor %}
   {% endif %}
   </div>
 </div>
+</div>
+
 {% endblock %}
+
