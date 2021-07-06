@@ -24,9 +24,23 @@
         </div>
 
       </form>
+      <form class="navbar-form" action="{% url 'location'%}">
+        <select name = "location"class="form-control form-control-lg">
+            <option selected>Select location </option>
+            <option value = "Machakos">Machakos</option>
+            <option value = "Kiambu">Kiambu</option>
+            <option value = "Makueni">Makueni</option>
+            <option value = "Nyandarua">Nyandarua</option>
+            <option value = "Mombasa">Mombasa</option>
+            <option value = "Vihiga">Vihiga</option>
+            
+        </select>
+        <input type="submit" value="Search" class="btn btn-default">
+     </form>  
     </div>
-    <!-- search form end -->
-  </div>
+  <!-- search form end -->
+
+</div>
 </nav>
 </body>
 </html>
