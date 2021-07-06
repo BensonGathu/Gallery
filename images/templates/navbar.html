@@ -14,7 +14,7 @@
     <!-- Adding a search form  -->
     
 
-    <div class="col-sm-4 col-md-5 navbar-right" >
+    <div class="col-sm-4 col-md-5 navbar-right" style="text-align: right;" >
 
       <form class="navbar-form" role="search" action="{% url 'search_results' %}" >
 
@@ -26,8 +26,8 @@
         </div>
 
       </form>
-      
-      <form class="navbar-form navbar-right" action="{% url 'location'%}">
+
+      <form class="navbar-form navbar-right-align" action="{% url 'location'%}" >
         <select name = "location"class="form-control form-control-lg">
             <option selected>Select location </option>
             <option value = "Machakos">Machakos</option>
