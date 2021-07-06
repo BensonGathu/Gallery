@@ -6,15 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-expand-lg ">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="{% url 'index' %}">Gallery</a>
     </div>
     <!-- Adding a search form  -->
-    <div class="col-sm-4 col-md-4 navbar-right">
+    
 
-      <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+    <div class="col-sm-4 col-md-5 navbar-right" >
+
+      <form class="navbar-form" role="search" action="{% url 'search_results' %}" >
 
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search Category" name="image">
@@ -24,7 +26,8 @@
         </div>
 
       </form>
-      <form class="navbar-form navbar-right" action="{% url 'location'%}" >
+      
+      <form class="navbar-form navbar-right" action="{% url 'location'%}">
         <select name = "location"class="form-control form-control-lg">
             <option selected>Select location </option>
             <option value = "Machakos">Machakos</option>
@@ -38,9 +41,10 @@
         </select>
         <input type="submit" value="Search" class="btn btn-default">
      </form>  
+      
     </div>
   <!-- search form end -->
-
+  </div>
 </div>
 </nav>
 </body>
